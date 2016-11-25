@@ -1,5 +1,5 @@
-{% set version = "1.2.2" %}
-{% set gh_org = "wdm0006" %}
+{% set version = "1.2.3" %}
+{% set gh_org = "scikit-learn-contrib" %}
 {% set gh_repo = "categorical_encoding" %}
 {% set pkg_name = "category_encoders" %}
 
@@ -11,7 +11,7 @@ package:
 source:
   fn: {{ pkg_name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ pkg_name[0] }}/{{ pkg_name }}/{{ pkg_name }}-{{ version }}.tar.gz
-  sha256: 858de8025caf1a6474cf879900ec9659cc0782ab6a93210823626341f6c4e075
+  sha256: e20bf223772725bee4586b703f41bfd18238c0a1ff38dd0cc8d1c8ec786d52cf
 
 build:
   number: 0
@@ -23,8 +23,8 @@ requirements:
     - python
     - setuptools
   run:
-    - numpy >=1.9.0
-    - pandas >=0.16.0
+    - numpy >=1.8.0
+    - pandas >=0.15.0
     - patsy >=0.4.0
     - python
     - scikit-learn >=0.15.0
@@ -47,7 +47,7 @@ about:
   home: https://github.com/{{ gh_org }}/{{ gh_repo }}
   license: BSD-3-Clause
   license_family: BSD
-  summary: A library of sklearn compatible categorical variable encoders
+  summary: A collection of sklearn transformers to encode categorical variables as numeric
 
 extra:
   recipe-maintainers:
