@@ -7,7 +7,7 @@ Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: A collection sklearn transformers to encode categorical variables as numeric
+Summary: A collection of sklearn transformers to encode categorical variables as numeric
 
 
 
