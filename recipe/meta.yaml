@@ -38,10 +38,7 @@ test:
   imports:
     - category_encoders
   commands:
-    - cd {{ SRC_DIR }}
-    - cd category_encoders
-    - cd tests
-    - nosetests
+    - nosetests {{ pkg_name }}
 
 about:
   home: https://github.com/{{ gh_org }}/{{ gh_repo }}
