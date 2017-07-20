@@ -46,6 +46,7 @@ about:
   license_family: BSD
   summary: A collection of sklearn transformers to encode categorical variables as numeric
 
+
 extra:
   recipe-maintainers:
     - bollwyvl
