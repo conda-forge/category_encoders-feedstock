@@ -1,4 +1,4 @@
-{% set version = "1.2.3" %}
+{% set version = "1.2.4" %}
 {% set gh_org = "scikit-learn-contrib" %}
 {% set gh_repo = "categorical_encoding" %}
 {% set pkg_name = "category_encoders" %}
@@ -11,7 +11,7 @@ package:
 source:
   fn: {{ pkg_name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ pkg_name[0] }}/{{ pkg_name }}/{{ pkg_name }}-{{ version }}.tar.gz
-  sha256: e20bf223772725bee4586b703f41bfd18238c0a1ff38dd0cc8d1c8ec786d52cf
+  sha256: b3342686fcb9718e6475b48a725477da06cf9bce0345e9484b4cad9cd1ff5e2e
 
 build:
   number: 0
@@ -23,8 +23,8 @@ requirements:
     - python
     - setuptools
   run:
-    - numpy >=1.8.0
-    - pandas >=0.15.0
+    - numpy >=1.9.0
+    - pandas >=0.16.0
     - patsy >=0.4.0
     - python
     - scikit-learn >=0.15.0
@@ -38,16 +38,14 @@ test:
   imports:
     - category_encoders
   commands:
-    - cd {{ SRC_DIR }}
-    - cd category_encoders
-    - cd tests
-    - nosetests
+    - nosetests {{ pkg_name }}
 
 about:
   home: https://github.com/{{ gh_org }}/{{ gh_repo }}
   license: BSD-3-Clause
   license_family: BSD
   summary: A collection of sklearn transformers to encode categorical variables as numeric
+
 
 extra:
   recipe-maintainers:
