@@ -11,6 +11,18 @@ Summary: A collection of sklearn transformers to encode categorical variables as
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/category_encoders-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/category_encoders-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/category_encoders-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/category_encoders-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/category_encoders-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/category-encoders-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/category_encoders/badges/version.svg)](https://anaconda.org/conda-forge/category_encoders)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/category_encoders/badges/downloads.svg)](https://anaconda.org/conda-forge/category_encoders)
+
 Installing category_encoders
 ============================
 
@@ -66,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/category_encoders-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/category_encoders-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/category_encoders-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/category_encoders-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/category_encoders-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/category-encoders-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/category_encoders/badges/version.svg)](https://anaconda.org/conda-forge/category_encoders)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/category_encoders/badges/downloads.svg)](https://anaconda.org/conda-forge/category_encoders)
 
 
 Updating category_encoders-feedstock
