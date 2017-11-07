@@ -1,17 +1,16 @@
-{% set version = "1.2.4" %}
-{% set gh_org = "scikit-learn-contrib" %}
-{% set gh_repo = "categorical_encoding" %}
-{% set pkg_name = "category_encoders" %}
+{% set name = "category_encoders" %}
+{% set version = "1.2.5" %}
+{% set sha256 = "ba011dd4dfc817466aaaa6dc2ff9dea5f378536396a726e0ed74c207f315beab" %}
 
 
 package:
-  name: {{ pkg_name }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ pkg_name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ pkg_name[0] }}/{{ pkg_name }}/{{ pkg_name }}-{{ version }}.tar.gz
-  sha256: b3342686fcb9718e6475b48a725477da06cf9bce0345e9484b4cad9cd1ff5e2e
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   number: 0
@@ -23,7 +22,7 @@ requirements:
     - python
     - setuptools
   run:
-    - numpy >=1.9.0
+    - numpy >=1.8.0
     - pandas >=0.16.0
     - patsy >=0.4.0
     - python
@@ -41,7 +40,7 @@ test:
     - nosetests category_encoders.tests
 
 about:
-  home: https://github.com/{{ gh_org }}/{{ gh_repo }}
+  home: https://github.com/scikit-learn-contrib/categorical_encoding
   license: BSD-3-Clause
   license_family: BSD
   summary: A collection of sklearn transformers to encode categorical variables as numeric
