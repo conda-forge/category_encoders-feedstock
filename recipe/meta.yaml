@@ -44,7 +44,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   summary: A collection of sklearn transformers to encode categorical variables as numeric
-  docs_url: http://contrib.scikit-learn.org/categorical-encoding/
+  doc_url: http://contrib.scikit-learn.org/categorical-encoding/
 
 extra:
   recipe-maintainers:
