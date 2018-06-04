@@ -1,6 +1,6 @@
 {% set name = "category_encoders" %}
-{% set version = "1.2.6" %}
-{% set sha256 = "99ccf0e451035d26dcfe9b21bea6835307b1ec090c289c5462001d3ad15f5bd0" %}
+{% set version = "1.2.7" %}
+{% set sha256 = "329fafd5a2a93282f19225bb0c2625475f51ef9b7bc8aec432ac49e1790a5938" %}
 
 
 package:
