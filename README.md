@@ -14,12 +14,15 @@ Summary: A collection of sklearn transformers to encode categorical variables as
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/category_encoders-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/category_encoders-feedstock)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/category_encoders-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/category_encoders-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/category_encoders/badges/version.svg)](https://anaconda.org/conda-forge/category_encoders)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/category_encoders/badges/downloads.svg)](https://anaconda.org/conda-forge/category_encoders)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-category_encoders-green.svg)](https://anaconda.org/conda-forge/category_encoders) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/category_encoders.svg)](https://anaconda.org/conda-forge/category_encoders) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/category_encoders.svg)](https://anaconda.org/conda-forge/category_encoders) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/category_encoders.svg)](https://anaconda.org/conda-forge/category_encoders) |
 
 Installing category_encoders
 ============================
