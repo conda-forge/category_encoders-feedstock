@@ -1,6 +1,5 @@
 {% set name = "category_encoders" %}
 {% set version = "1.3.0" %}
-{% set sha256 = "5dad7fdbadb85dc13af9ea7739b705447e5e19993359d75041913791d8f7f0c1" %}
 
 
 package:
@@ -8,34 +7,34 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 5dad7fdbadb85dc13af9ea7739b705447e5e19993359d75041913791d8f7f0c1
 
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install --no-deps --ignore-installed --no-cache-dir ."
 
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
     - pip
   run:
-    - numpy >=1.8.0
-    - pandas >=0.16.0
-    - patsy >=0.4.0
+    - numpy >=1.11.1
+    - pandas >=0.20.1
+    - patsy >=0.4.1
     - python
-    - scikit-learn >=0.15.0
-    - scipy >=0.9
-    - statsmodels >=0.6.0
+    - scikit-learn >=0.17.1
+    - scipy >=0.17.0
+    - statsmodels >=0.6.1
 
 test:
   requires:
     - nose
     - python
+    - unittest2
+    - cython
   imports:
     - category_encoders
   commands:
@@ -45,7 +44,8 @@ about:
   home: https://github.com/scikit-learn-contrib/categorical_encoding
   license: BSD-3-Clause
   license_family: BSD
-  summary: A collection of sklearn transformers to encode categorical variables as numeric
+  license_file: LICENSE.md
+  summary: A set of scikit-learn-style transformers for encoding categorical variables into numeric by means of different techniques.
   doc_url: http://contrib.scikit-learn.org/categorical-encoding/
 
 extra:
