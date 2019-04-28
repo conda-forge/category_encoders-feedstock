@@ -7,9 +7,27 @@ Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: A set of scikit-learn-style transformers for encoding categorical variables into numeric by means of different techniques.
+Summary: A collection sklearn transformers to encode categorical variables as numeric
 
+A set of scikit-learn-style transformers for encoding categorical variables
+into numeric with different techniques. While ordinal, one-hot, and hashing
+encoders have similar equivalents in the existing scikit-learn version, the
+transformers in this library all share a few useful properties:
 
+- First-class support for pandas dataframes as an input (and optionally as
+  output)
+
+- Can explicitly configure which columns in the data are encoded by name or
+  index, or infer non-numeric columns regardless of input type
+
+- Can drop any columns with very low variance based on training set
+  optionally
+
+- Portability: train a transformer on data, pickle it, reuse it later and
+  get the same thing out.
+
+- Full compatibility with sklearn pipelines, input an array-like dataset
+  like any other transformer
 
 Current build status
 ====================
