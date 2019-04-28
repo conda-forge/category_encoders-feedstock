@@ -1,5 +1,5 @@
 {% set name = "category_encoders" %}
-{% set version = "1.3.0" %}
+{% set version = "2.0.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5dad7fdbadb85dc13af9ea7739b705447e5e19993359d75041913791d8f7f0c1
+  sha256: cc2fe178fe6b4dc6fbf4de6b9070151889255f6d1306ffc22e8de79e20c0c047
 
 build:
   noarch: python
