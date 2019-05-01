@@ -33,17 +33,10 @@ test:
     - python
     - unittest2
     - cython
-    - nose-exclude
   imports:
     - category_encoders
   commands:
-    - >
-      nosetests category_encoders ||
-      nosetests category_encoders
-      --exclude-test category_encoders.tests.test_encoders.TestEncoders.test_handle_missing_return_nan_test
-      --exclude-test category_encoders.tests.test_encoders.TestEncoders.test_handle_missing_return_nan_train
-      --exclude-test category_encoders.tests.test_cat_boost.TestBinaryEncoder.test_catBoost_missing
-      --exclude-test category_encoders.tests.test_one_hot.TestOneHotEncoderTestCase.test_one_hot
+    - nosetests category_encoders
 
 about:
   home: https://github.com/scikit-learn-contrib/categorical_encoding
