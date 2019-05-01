@@ -7,15 +7,42 @@ Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: A set of scikit-learn-style transformers for encoding categorical variables into numeric by means of different techniques.
+Summary: A collection sklearn transformers to encode categorical variables as numeric
 
+A set of scikit-learn-style transformers for encoding categorical variables
+into numeric with different techniques. While ordinal, one-hot, and hashing
+encoders have similar equivalents in the existing scikit-learn version, the
+transformers in this library all share a few useful properties:
 
+- First-class support for pandas dataframes as an input (and optionally as
+  output)
+
+- Can explicitly configure which columns in the data are encoded by name or
+  index, or infer non-numeric columns regardless of input type
+
+- Can drop any columns with very low variance based on training set
+  optionally
+
+- Portability: train a transformer on data, pickle it, reuse it later and
+  get the same thing out.
+
+- Full compatibility with sklearn pipelines, input an array-like dataset
+  like any other transformer
 
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/category_encoders-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/category_encoders-feedstock)
+
+<table><tr>
+    
+    <td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3792&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/category_encoders-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
@@ -48,6 +75,8 @@ conda search category_encoders --channel conda-forge
 
 About conda-forge
 =================
+
+[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -103,3 +132,11 @@ In order to produce a uniquely identifiable distribution:
  * If the version of a package **is** being increased, please remember to return
    the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
    back to 0.
+
+Feedstock Maintainers
+=====================
+
+* [@bollwyvl](https://github.com/bollwyvl/)
+* [@nirajd](https://github.com/nirajd/)
+* [@wdm0006](https://github.com/wdm0006/)
+
