@@ -20,7 +20,7 @@ requirements:
     - pip
   run:
     - numpy >=1.11.3
-    - pandas >=0.21.1
+    - pandas >=0.21.1,<0.24
     - patsy >=0.4.1
     - python
     - scikit-learn >=0.20.0
