@@ -1,5 +1,5 @@
 {% set name = "category_encoders" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cc2fe178fe6b4dc6fbf4de6b9070151889255f6d1306ffc22e8de79e20c0c047
+  sha256: 9d76a2d810e02ad9527bed9c70b01fcb0f2238778b5422128275b5ba7561ca64
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script:
     - rm -rf examples  # [unix]
     - rd /s /q examples  # [win]
@@ -23,7 +23,7 @@ requirements:
     - pip
   run:
     - numpy >=1.11.3
-    - pandas >=0.21.1,<0.24
+    - pandas >=0.21.1
     - patsy >=0.4.1
     - python
     - scikit-learn >=0.20.0
