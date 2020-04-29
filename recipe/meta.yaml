@@ -1,5 +1,5 @@
 {% set name = "category_encoders" %}
-{% set version = "2.1.0" %}
+{% set version = "2.2.2" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9d76a2d810e02ad9527bed9c70b01fcb0f2238778b5422128275b5ba7561ca64
+  sha256: 79651dc3e8cd6749bc5d404c49a79e93469016d106736326842305e076136cb0
 
 build:
   noarch: python
@@ -15,7 +15,7 @@ build:
   script:
     - rm -rf examples  # [unix]
     - rd /s /q examples  # [win]
-    - "{{ PYTHON }} -m pip install --no-deps --ignore-installed -vvv ."
+    - {{ PYTHON }} -m pip install --no-deps --ignore-installed -vvv .
 
 requirements:
   host:
