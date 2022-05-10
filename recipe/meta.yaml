@@ -1,5 +1,5 @@
 {% set name = "category_encoders" %}
-{% set version = "2.4.0" %}
+{% set version = "2.4.1" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: ae07ed53b143e511b7c0b7736bc156e60530f46b3e5a91373fb16807582fb222
+    sha256: 6e927c9681c68598980d2debed348c7ed39173c616ffe46936ac62c35086cbb4
     folder: dist
   - url: https://github.com/scikit-learn-contrib/{{ name }}/archive/{{ version }}.tar.gz
-    sha256: 66f17b8df97f137bdd88985dfedf420e7f01cadd6acf3325304af1ddefecef0f
+    sha256: 5d365116843c1d06a18d75a38482af05726a88b5ecb519c845a02f14010bd216
     folder: src
 
 build:
