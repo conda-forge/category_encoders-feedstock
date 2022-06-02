@@ -1,16 +1,15 @@
-{% set name = "category_encoders" %}
-{% set version = "2.4.1" %}
+{% set version = "2.5.0" %}
 
 package:
-  name: {{ name }}
+  name: category_encoders
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 6e927c9681c68598980d2debed348c7ed39173c616ffe46936ac62c35086cbb4
+  - url: https://pypi.io/packages/source/c/category_encoders/category_encoders-{{ version }}.tar.gz
+    sha256: 64dc68cd30dea32a390b3eed880f6e365635118c916b082dde99b76741155c15
     folder: dist
-  - url: https://github.com/scikit-learn-contrib/{{ name }}/archive/{{ version }}.tar.gz
-    sha256: 5d365116843c1d06a18d75a38482af05726a88b5ecb519c845a02f14010bd216
+  - url: https://github.com/scikit-learn-contrib/category_encoders/archive/{{ version }}.tar.gz
+    sha256: ff72d21ddf62d829f43375c67ea4934c82947f9a0c5cbf9114838624db941420
     folder: src
 
 build:
@@ -22,7 +21,7 @@ build:
 requirements:
   host:
     - numpy >=1.14.0
-    - pandas >=0.21.1
+    - pandas >=1.0.5
     - patsy >=0.5.1
     - pip
     - python >=3.5
@@ -31,7 +30,7 @@ requirements:
     - statsmodels >=0.9.0
   run:
     - numpy >=1.14.0
-    - pandas >=0.21.1
+    - pandas >=1.0.5
     - patsy >=0.5.1
     - python >=3.5
     - scikit-learn >=0.20.0
@@ -49,7 +48,7 @@ test:
   imports:
     - category_encoders
   commands:
-    - python -m pip check
+    - pip check
     - cd src && pytest -vv --cov category_encoders -k "not (pandas_index or truncated_index)"
 
 about:
