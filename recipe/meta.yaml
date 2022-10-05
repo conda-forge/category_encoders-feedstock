@@ -1,4 +1,4 @@
-{% set version = "2.5.0" %}
+{% set version = "2.5.1" %}
 
 package:
   name: category_encoders
@@ -6,10 +6,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/category_encoders/category_encoders-{{ version }}.tar.gz
-    sha256: 64dc68cd30dea32a390b3eed880f6e365635118c916b082dde99b76741155c15
+    sha256: c4648fcc0edd978f8d81c1b680672a0b5562b921a398eef0ef514c152ef55be2
     folder: dist
   - url: https://github.com/scikit-learn-contrib/category_encoders/archive/{{ version }}.tar.gz
-    sha256: ff72d21ddf62d829f43375c67ea4934c82947f9a0c5cbf9114838624db941420
+    sha256: f6b9fdc63d5833c280f25ba587e894ccf69f5a6fa766e788cc89b7b1bcf854bd
     folder: src
 
 build:
