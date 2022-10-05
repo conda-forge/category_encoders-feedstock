@@ -16,6 +16,7 @@ build:
   noarch: python
   number: 0
   script:
+    - {{ PYTHON }} -c "p = __import__('pathlib').Path('dist/setup.py'); p.write_text(p.read_text().replace('include=[',''''include=['category_encoders.datasets', '''))"
     - cp -r src/category_encoders/datasets dist/datasets || xcopy /S src/category_encoders/datasets dist/datasets
     - cd dist && {{ PYTHON }} -m pip install -vvv .
 
