@@ -20,14 +20,8 @@ build:
 
 requirements:
   host:
-    - numpy >=1.14.0
-    - pandas >=1.0.5
-    - patsy >=0.5.1
     - pip
     - python >=3.5
-    - scikit-learn >=0.20.0
-    - scipy >=1.0.0
-    - statsmodels >=0.9.0
   run:
     - numpy >=1.14.0
     - pandas >=1.0.5
@@ -49,15 +43,15 @@ test:
     - category_encoders
   commands:
     - pip check
-    - cd src && pytest -vv --cov category_encoders -k "not (pandas_index or truncated_index)"
+    - pytest src -vv --cov=category_encoders -k="not (pandas_index or truncated_index)" --cov-report=term-missing:skip-covered --cov=branch --no-cov-on-fail
 
 about:
-  home: https://github.com/scikit-learn-contrib/categorical_encoding
+  home: https://github.com/scikit-learn-contrib/category_encoders
   license: BSD-3-Clause
   license_family: BSD
   license_file: dist/LICENSE.md
-  summary: A collection sklearn transformers to encode categorical variables as numeric
-  doc_url: https://contrib.scikit-learn.org/categorical-encoding
+  summary: A collection of sklearn transformers to encode categorical variables as numeric
+  doc_url: https://contrib.scikit-learn.org/category_encoders/
   description: |-
     A set of scikit-learn-style transformers for encoding categorical variables
     into numeric with different techniques. While ordinal, one-hot, and hashing
