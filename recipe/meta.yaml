@@ -1,4 +1,4 @@
-{% set version = "2.5.0" %}
+{% set version = "2.5.1.post0" %}
 
 package:
   name: category_encoders
@@ -6,10 +6,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/category_encoders/category_encoders-{{ version }}.tar.gz
-    sha256: 64dc68cd30dea32a390b3eed880f6e365635118c916b082dde99b76741155c15
+    sha256: 53828019a70dabfd52b368a264e82e9030b7a34cda13122604209972e3363251
     folder: dist
   - url: https://github.com/scikit-learn-contrib/category_encoders/archive/{{ version }}.tar.gz
-    sha256: ff72d21ddf62d829f43375c67ea4934c82947f9a0c5cbf9114838624db941420
+    sha256: 40958c563c64298f3547193cde620e605ac315a54dcb6ec8311af73e93e194a1
     folder: src
 
 build:
@@ -20,14 +20,8 @@ build:
 
 requirements:
   host:
-    - numpy >=1.14.0
-    - pandas >=1.0.5
-    - patsy >=0.5.1
     - pip
     - python >=3.5
-    - scikit-learn >=0.20.0
-    - scipy >=1.0.0
-    - statsmodels >=0.9.0
   run:
     - numpy >=1.14.0
     - pandas >=1.0.5
@@ -49,15 +43,15 @@ test:
     - category_encoders
   commands:
     - pip check
-    - cd src && pytest -vv --cov category_encoders -k "not (pandas_index or truncated_index)"
+    - pytest src -vv --cov=category_encoders --cov-branch -k="not (pandas_index or truncated_index)" --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90
 
 about:
-  home: https://github.com/scikit-learn-contrib/categorical_encoding
+  home: https://github.com/scikit-learn-contrib/category_encoders
   license: BSD-3-Clause
   license_family: BSD
   license_file: dist/LICENSE.md
-  summary: A collection sklearn transformers to encode categorical variables as numeric
-  doc_url: https://contrib.scikit-learn.org/categorical-encoding
+  summary: A collection of sklearn transformers to encode categorical variables as numeric
+  doc_url: https://contrib.scikit-learn.org/category_encoders/
   description: |-
     A set of scikit-learn-style transformers for encoding categorical variables
     into numeric with different techniques. While ordinal, one-hot, and hashing

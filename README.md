@@ -1,15 +1,15 @@
 About category_encoders
 =======================
 
-Home: https://github.com/scikit-learn-contrib/categorical_encoding
+Home: https://github.com/scikit-learn-contrib/category_encoders
 
 Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/category_encoders-feedstock/blob/main/LICENSE.txt)
 
-Summary: A collection sklearn transformers to encode categorical variables as numeric
+Summary: A collection of sklearn transformers to encode categorical variables as numeric
 
-Documentation: https://contrib.scikit-learn.org/categorical-encoding
+Documentation: https://contrib.scikit-learn.org/category_encoders/
 
 A set of scikit-learn-style transformers for encoding categorical variables
 into numeric with different techniques. While ordinal, one-hot, and hashing
