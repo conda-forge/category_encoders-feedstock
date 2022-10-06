@@ -1,4 +1,4 @@
-{% set version = "2.5.1" %}
+{% set version = "2.5.1.post0" %}
 
 package:
   name: category_encoders
@@ -6,18 +6,16 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/category_encoders/category_encoders-{{ version }}.tar.gz
-    sha256: c4648fcc0edd978f8d81c1b680672a0b5562b921a398eef0ef514c152ef55be2
+    sha256: 53828019a70dabfd52b368a264e82e9030b7a34cda13122604209972e3363251
     folder: dist
   - url: https://github.com/scikit-learn-contrib/category_encoders/archive/{{ version }}.tar.gz
-    sha256: f6b9fdc63d5833c280f25ba587e894ccf69f5a6fa766e788cc89b7b1bcf854bd
+    sha256: 40958c563c64298f3547193cde620e605ac315a54dcb6ec8311af73e93e194a1
     folder: src
 
 build:
   noarch: python
   number: 0
   script:
-    - {{ PYTHON }} -c "p = __import__('pathlib').Path('dist/setup.py'); p.write_text(p.read_text().replace('include=[','''include=['category_encoders.datasets', '''))"
-    - cp -r src/category_encoders/datasets dist/datasets || xcopy /S src/category_encoders/datasets dist/datasets
     - cd dist && {{ PYTHON }} -m pip install -vvv .
 
 requirements:
