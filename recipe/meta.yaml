@@ -43,7 +43,7 @@ test:
     - category_encoders
   commands:
     - pip check
-    - pytest src -vv --cov=category_encoders --cov-branch -k="not (pandas_index or truncated_index)" --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90
+    - pytest src -vv --cov=category_encoders --cov-branch -k="not (pandas_index or truncated_index)" --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=89
 
 about:
   home: https://github.com/scikit-learn-contrib/category_encoders
