@@ -1,11 +1,11 @@
-About category_encoders
-=======================
+About category_encoders-feedstock
+=================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/category_encoders-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/scikit-learn-contrib/category_encoders
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/category_encoders-feedstock/blob/main/LICENSE.txt)
 
 Summary: A collection of sklearn transformers to encode categorical variables as numeric
 

@@ -1,4 +1,4 @@
-{% set version = "2.6.0" %}
+{% set version = "2.6.1" %}
 
 package:
   name: category_encoders
@@ -6,10 +6,10 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/c/category_encoders/category_encoders-{{ version }}.tar.gz
-    sha256: 9e92dbdc61905deb2ea9cd43cd3e0dd3380050511e34e30f2cb91fa762ef2bb4
+    sha256: 59eba46127c2ce4cd31e0177e0a55792090b7b2a0e6f50517a27e1f2251d7622
     folder: dist
   - url: https://github.com/scikit-learn-contrib/category_encoders/archive/{{ version }}.tar.gz
-    sha256: bd9cfe8430b6cc2d67eaa51000937983422ebd81f88d770c3dcbe6cf9563e96e
+    sha256: 51d4c594cd102a3d30a4a00f3ffa62f73b3d2f4298e7a57df8a8046a8d7881f5
     folder: src
 
 build:
@@ -39,11 +39,12 @@ test:
     - pip
     - pytest
     - pytest-cov
+    - setuptools <66
   imports:
     - category_encoders
   commands:
     - pip check
-    - pytest src -vv --cov=category_encoders --cov-branch -k="not (pandas_index or truncated_index)" --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=89
+    - python -W ignore -m pytest src -vv --cov=category_encoders --cov-branch -k="not (pandas_index or truncated_index)" --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=89
 
 about:
   home: https://github.com/scikit-learn-contrib/category_encoders
