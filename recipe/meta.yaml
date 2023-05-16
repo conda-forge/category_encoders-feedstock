@@ -39,6 +39,7 @@ test:
     - pip
     - pytest
     - pytest-cov
+    - setuptools <66
   imports:
     - category_encoders
   commands:
