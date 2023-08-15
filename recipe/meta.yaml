@@ -23,6 +23,7 @@ requirements:
     - pip
     - python >=3.5
   run:
+    - importlib-resources
     - numpy >=1.14.0
     - pandas >=1.0.5
     - patsy >=0.5.1
@@ -39,7 +40,6 @@ test:
     - pip
     - pytest
     - pytest-cov
-    - setuptools <66
   imports:
     - category_encoders
   commands:
