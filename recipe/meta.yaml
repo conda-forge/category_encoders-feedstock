@@ -23,7 +23,7 @@ requirements:
     - pip
     - python >=3.5
   run:
-    - importlib-resources
+    - importlib_resources
     - numpy >=1.14.0
     - pandas >=1.0.5
     - patsy >=0.5.1
