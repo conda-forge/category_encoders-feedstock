@@ -16,14 +16,15 @@ build:
   noarch: python
   number: 0
   script:
-    - cd dist && {{ PYTHON }} -m pip install -vvv .
+    - cd dist && {{ PYTHON }} -m pip install -vvv . --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
     - python >=3.7
+    - setuptools
   run:
-    - importlib-resources
+    - importlib_resources
     - numpy >=1.14.0
     - pandas >=1.0.5
     - patsy >=0.5.1
