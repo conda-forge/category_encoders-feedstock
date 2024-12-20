@@ -37,15 +37,18 @@ test:
   source_files:
     - src/tests
   requires:
+    - coverage
     - cython
     - pip
-    - pytest-cov
     - python {{ python_min }}
+    - pytest
+    - scikit-learn <1.6.0
   imports:
     - category_encoders
   commands:
     - pip check
-    - python -W ignore -m pytest src -vv --color=yes --tb=long --cov=category_encoders --cov-branch -k "not (pandas_index or truncated_index)" --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=89
+    - coverage run --source=category_encoders --branch -m pytest src -vv --color=yes --tb=long -k "not (pandas_index or truncated_index)" 
+    - coverage report --show-missing --skip-covered --fail-under=89
 
 about:
   home: https://github.com/scikit-learn-contrib/category_encoders
