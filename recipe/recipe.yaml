@@ -1,7 +1,4 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
-
-schema_version: 1
-
 context:
   version: 2.8.0
 
@@ -27,7 +24,7 @@ build:
 requirements:
   host:
     - pip
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - poetry-core
   run:
     - numpy >=1.14.0
@@ -45,12 +42,11 @@ tests:
         - category_encoders
   - files:
       source:
-        - src/tests
+        - src/tests/
     requirements:
       run:
         - coverage
-        - pip
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
         - pytest
         - pytest-subtests
     script:
