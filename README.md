@@ -17,19 +17,19 @@ encoders have similar equivalents in the existing scikit-learn version, the
 transformers in this library all share a few useful properties:
 
 - First-class support for pandas dataframes as an input (and optionally as
-  output)
+output)
 
 - Can explicitly configure which columns in the data are encoded by name or
-  index, or infer non-numeric columns regardless of input type
+index, or infer non-numeric columns regardless of input type
 
 - Can drop any columns with very low variance based on training set
-  optionally
+optionally
 
 - Portability: train a transformer on data, pickle it, reuse it later and
-  get the same thing out.
+get the same thing out.
 
 - Full compatibility with sklearn pipelines, input an array-like dataset
-  like any other transformer
+like any other transformer
 
 Current build status
 ====================

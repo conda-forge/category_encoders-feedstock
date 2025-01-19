@@ -1,0 +1,91 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: 2.8.0
+
+package:
+  name: category_encoders
+  version: ${{ version }}
+
+source:
+  - url: https://pypi.org/packages/source/c/category_encoders/category_encoders-${{ version }}.tar.gz
+    sha256: d8e69b11340cdbd35a644e9d29493ab366c125ab8c832b379a6d36c59a274e3f
+    target_directory: dist
+  - url: https://github.com/scikit-learn-contrib/category_encoders/archive/${{ version }}.tar.gz
+    sha256: a597827a2337222f6fd18ed92dd9f549e2864a8f14f062526f5ef26f17bfcfd6
+    target_directory: src
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - cd dist
+    - ${{ PYTHON }} -m pip install -vv . --no-deps --no-build-isolation --disable-pip-version-check
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - poetry-core
+  run:
+    - numpy >=1.14.0
+    - pandas >=1.0.5
+    - patsy >=0.5.1
+    - python >=${{ python_min }}
+    - scikit-learn >=1.6.0
+    - scipy >=1.0.0
+    - statsmodels >=0.9.0
+
+tests:
+  - python:
+      pip_check: true
+      imports:
+        - category_encoders
+  - files:
+      source:
+        - src/tests/
+    requirements:
+      run:
+        - coverage
+        - python ${{ python_min }}.*
+        - pytest
+        - pytest-subtests
+    script:
+      - coverage run --source=category_encoders --branch -m pytest src -vv --color=yes --tb=long -k "not (pandas_index or truncated_index)"
+      - coverage report --show-missing --skip-covered --fail-under=89
+
+about:
+  license: BSD-3-Clause
+  license_file: dist/LICENSE.md
+  summary: A collection of sklearn transformers to encode categorical variables as numeric
+  description: |-
+    A set of scikit-learn-style transformers for encoding categorical variables
+    into numeric with different techniques. While ordinal, one-hot, and hashing
+    encoders have similar equivalents in the existing scikit-learn version, the
+    transformers in this library all share a few useful properties:
+
+    - First-class support for pandas dataframes as an input (and optionally as
+    output)
+
+    - Can explicitly configure which columns in the data are encoded by name or
+    index, or infer non-numeric columns regardless of input type
+
+    - Can drop any columns with very low variance based on training set
+    optionally
+
+    - Portability: train a transformer on data, pickle it, reuse it later and
+    get the same thing out.
+
+    - Full compatibility with sklearn pipelines, input an array-like dataset
+    like any other transformer
+
+
+  homepage: https://github.com/scikit-learn-contrib/category_encoders
+  documentation: https://contrib.scikit-learn.org/category_encoders/
+
+extra:
+  recipe-maintainers:
+    - bollwyvl
+    - nirajd
+    - wdm0006
