@@ -3,6 +3,8 @@ schema_version: 1
 
 context:
   version: "2.9.0"
+  python_min: "3.11"
+  python_check_max: "3.14"
 
 package:
   name: category_encoders
@@ -39,9 +41,11 @@ requirements:
 
 tests:
   - python:
+      imports: category_encoders
       pip_check: true
-      imports:
-        - category_encoders
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
   - files:
       source:
         - src/tests/
