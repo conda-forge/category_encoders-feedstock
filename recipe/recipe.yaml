@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.9.0"
+  version: "2.10.0"
   python_min: "3.11"
   python_check_max: "3.14"
 
@@ -12,10 +12,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/c/category_encoders/category_encoders-${{ version }}.tar.gz
-    sha256: 659311786e909013b8e8715fd1271244789a1dea278da44058828f88eeab5b40
+    sha256: 28e28a01813ac56d4ed068bb8561f523a527b04abf4261be890ab9adbc5fd143
     target_directory: dist
   - url: https://github.com/scikit-learn-contrib/category_encoders/archive/${{ version }}.tar.gz
-    sha256: a07531daef89dab7f4f3ac2a83dc56f3cbf4f696e304ea40f6362a77ec56782c
+    sha256: b839d137611767ba53ec82c3b5a2e5c8568719560b72d2d6271567a27dc5325a
     target_directory: src
 
 build:
