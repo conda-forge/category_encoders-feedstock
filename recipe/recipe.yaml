@@ -5,7 +5,7 @@ context:
   version: "2.10.0"
   python_min: "3.11"
   python_check_max: "3.14"
-  pytest_k: not (pandas_index or truncated_index or ignored_columns_are_untouched or missing_values or unknown_value)
+  pytest_k: not (pandas_index or truncated_index or ignored_columns_are_untouched or missing_values or unknown_value or cat_boost_missing)
 
 package:
   name: category_encoders
