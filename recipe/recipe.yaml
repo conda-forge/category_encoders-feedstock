@@ -85,9 +85,8 @@ about:
 
     - Full compatibility with sklearn pipelines, input an array-like dataset
     like any other transformer
-
-
-  homepage: https://github.com/scikit-learn-contrib/category_encoders
+  homepage: https://pypi.org/project/category-encoders
+  repository: https://github.com/scikit-learn-contrib/category_encoders
   documentation: https://contrib.scikit-learn.org/category_encoders/
 
 extra:
