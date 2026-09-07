@@ -33,7 +33,6 @@ requirements:
   run:
     - numpy >=1.14.0
     - pandas >=1.0.5
-    - patsy >=0.5.1
     - python >=${{ python_min }}
     - scikit-learn >=1.6.0
     - scipy >=1.0.0
