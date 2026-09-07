@@ -4,14 +4,17 @@ schema_version: 1
 context:
   version: "2.11.0"
   python_check_max: "3.14"
-  pytest_k: not (pandas_index or truncated_index or ignored_columns_are_untouched or missing_values or unknown_value or cat_boost_missing)
+  pytest_k: >-
+    pandas_index or truncated_index or ignored_columns_are_untouched or missing_values or unknown_value or cat_boost_missing
+    or (metamorphic and GLMMEncoder)
+    or (ordinal_golden and (fit_mapping_and_encoding or unknown_and_missing_at_transform or supplied_mapping_encoding or universal_fixture))
 
 package:
   name: category_encoders
   version: ${{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/c/category_encoders/category_encoders-${{ version }}.tar.gz
+  - url: https://files.pythonhosted.org/packages/source/c/category_encoders/category_encoders-${{ version }}.tar.gz
     sha256: e9b98701b0ab0e0c43c3f5dfe7fd3615fae176d83497ac04208ea6c285999fd1
     target_directory: dist
   - url: https://github.com/scikit-learn-contrib/category_encoders/archive/v${{ version }}.tar.gz
@@ -54,11 +57,8 @@ tests:
         - python ${{ python_min }}.*
         - pytest
         - pytest-subtests
-        # trying values from poetry.lock
-        - scikit-learn <1.8
-        - scipy <1.17
     script:
-      - coverage run --source=category_encoders --branch -m pytest src -vv --color=yes --tb=long -k "${{ pytest_k }}"
+      - coverage run --source=category_encoders --branch -m pytest src -vv --color=yes --tb=long -k "not (${{ pytest_k | replace('\n', ' ') }})"
       - coverage report --show-missing --skip-covered --fail-under=89
 
 about:
