@@ -11,7 +11,7 @@ Summary: A collection of sklearn transformers to encode categorical variables as
 
 Development: https://github.com/scikit-learn-contrib/category_encoders
 
-Documentation: https://contrib.scikit-learn.org/category_encoders/
+Documentation: https://contrib.scikit-learn.org/category_encoders
 
 A set of scikit-learn-style transformers for encoding categorical variables
 into numeric with different techniques. While ordinal, one-hot, and hashing
