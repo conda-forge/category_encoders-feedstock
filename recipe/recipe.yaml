@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.11.0"
+  version: "2.11.1"
   python_check_max: "3.14"
   pytest_k: |-
     not (
@@ -23,10 +23,10 @@ package:
 
 source:
   - url: https://files.pythonhosted.org/packages/source/c/category_encoders/category_encoders-${{ version }}.tar.gz
-    sha256: e9b98701b0ab0e0c43c3f5dfe7fd3615fae176d83497ac04208ea6c285999fd1
+    sha256: f21b99185800c19b562b2928a0fe67dbf5658d048cd70451bfe8811c4123fdb0
     target_directory: dist
   - url: https://github.com/scikit-learn-contrib/category_encoders/archive/v${{ version }}.tar.gz
-    sha256: da61ccacbf9f10ca5879cdd3095659e4d695035d44d763dd44ab4abe869c5691
+    sha256: fcaba386c716ba8fb7f4d4b4efb2d8474231a2fbc3cf7b4945cf25205971edf0
     target_directory: src
 
 build:
