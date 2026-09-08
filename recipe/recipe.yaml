@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.10.0"
+  version: "2.11.0"
   python_min: "3.11"
   python_check_max: "3.14"
   pytest_k: not (pandas_index or truncated_index or ignored_columns_are_untouched or missing_values or unknown_value or cat_boost_missing)
@@ -13,10 +13,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/c/category_encoders/category_encoders-${{ version }}.tar.gz
-    sha256: 28e28a01813ac56d4ed068bb8561f523a527b04abf4261be890ab9adbc5fd143
+    sha256: e9b98701b0ab0e0c43c3f5dfe7fd3615fae176d83497ac04208ea6c285999fd1
     target_directory: dist
-  - url: https://github.com/scikit-learn-contrib/category_encoders/archive/${{ version }}.tar.gz
-    sha256: b839d137611767ba53ec82c3b5a2e5c8568719560b72d2d6271567a27dc5325a
+  - url: https://github.com/scikit-learn-contrib/category_encoders/archive/v${{ version }}.tar.gz
+    sha256: da61ccacbf9f10ca5879cdd3095659e4d695035d44d763dd44ab4abe869c5691
     target_directory: src
 
 build:
