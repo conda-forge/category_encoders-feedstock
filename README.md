@@ -62,31 +62,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `category_encoders` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install category_encoders
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install category_encoders
 ```
 
-It is possible to list all of the versions of `category_encoders` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add category_encoders
+# for installing globally
+pixi global install category_encoders
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `category_encoders` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search category_encoders --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search category_encoders --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search category_encoders --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -98,6 +140,8 @@ mamba repoquery whoneeds category_encoders --channel conda-forge
 # List dependencies of `category_encoders`:
 mamba repoquery depends category_encoders --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
