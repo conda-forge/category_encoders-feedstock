@@ -2,8 +2,8 @@
 schema_version: 1
 
 context:
-  version: "2.11.1"
-  python_check_max: "3.14"
+  version: "2.12.2"
+  python_check_max: "3.15"
   pytest_k: |-
     not (
       joint_equals_manual_concat_with_missing
@@ -23,10 +23,10 @@ package:
 
 source:
   - url: https://files.pythonhosted.org/packages/source/c/category_encoders/category_encoders-${{ version }}.tar.gz
-    sha256: f21b99185800c19b562b2928a0fe67dbf5658d048cd70451bfe8811c4123fdb0
+    sha256: 04a6334d83be3b5c94c1d599114819b19bace5823d6eb260f415fa37d7761318
     target_directory: dist
   - url: https://github.com/scikit-learn-contrib/category_encoders/archive/v${{ version }}.tar.gz
-    sha256: fcaba386c716ba8fb7f4d4b4efb2d8474231a2fbc3cf7b4945cf25205971edf0
+    sha256: e9d9e7e2dcfdd93e1ada7680c5d3333d1da6d16901a34b678b05c6789fa03d38
     target_directory: src
 
 build:
@@ -34,7 +34,7 @@ build:
   noarch: python
   script:
     - cd dist
-    - ${{ PYTHON }} -m pip install -vv . --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install -vv . --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependenciess
 
 requirements:
   host:
@@ -50,6 +50,11 @@ requirements:
     - statsmodels >=0.9.0
 
 tests:
+  - package_contents:
+      strict: true
+      site_packages:
+        - category_encoders/**
+        - category_encoders-${{ version }}.dist-info/**
   - python:
       imports: category_encoders
       pip_check: true
